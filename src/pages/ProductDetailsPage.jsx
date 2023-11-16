@@ -6,28 +6,20 @@ import ProductDetails from "../components/ProductDetails";
 const ProductDetailsPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  console.log(id);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProductDetails = async () => {
-      const apiUrl = `/api/products/${id}.json`; // Make sure this endpoint is correct
-      console.log("Fetching product details from:", apiUrl);
-
       try {
-        const response = await axios.get(apiUrl, {
-          headers: {
-            "X-Requested-With": "XMLHttpRequest",
-          },
-        });
+        const response = await axios.get("/api/products.json");
 
-        console.log("Response data:", response.data);
+        const product = response?.data.products.data.items.find(
+          (item) => item.id === id
+        );
 
-        // Ensure you are accessing the correct properties from the API response
-        const productData = response.data.products.data.items[0]; // Adjust this based on your API response structure
-        setProduct(productData);
+        setProduct(product);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching product details:", error);
@@ -37,7 +29,7 @@ const ProductDetailsPage = () => {
     };
 
     fetchProductDetails();
-  }, [id]);
+  }, []);
 
   return (
     <div>

@@ -19,7 +19,6 @@ const ProductCard = ({ product }) => (
     <h2 className="font-semibold text-xl text-indigo-400">{product.name}</h2>
     <p className="text-gray-600 mt-4">${product.price}</p>
 
-    {/* Ensure the correct product ID is passed to the Link component */}
     <Link to={`/product-details/${product.id}`}>
       <button className="mt-4 bg-indigo-500 text-white p-2 rounded-md">
         View Details
