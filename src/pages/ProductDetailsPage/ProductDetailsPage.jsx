@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import ProductDetails from "../components/ProductDetails";
+import ProductDetails from "../../components/ProductDetails/ProductDetails";
 
 const ProductDetailsPage = () => {
   const navigate = useNavigate();

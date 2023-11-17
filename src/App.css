@@ -3,24 +3,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* Add your custom styles here */
-.navbar {
-  background-color: #333;
-  padding: 10px;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-.links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.links a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-.links a:hover {
-  text-decoration: underline;
+body {
+  font-family: "Roboto", sans-serif;
 }
