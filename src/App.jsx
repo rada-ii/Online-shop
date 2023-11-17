@@ -7,7 +7,6 @@ import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailsPage";
 import Cart from "./components/Cart/Cart";
 import axios from "axios";
 import { extractUniqueCategories } from "./utils";
-import Footer from "./components/Footer/Footer";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -50,9 +49,14 @@ function App() {
   };
 
   const removeFromCart = (productId) => {
-    const updatedCart = cart.filter((item) => item.id !== productId);
-    setCart(updatedCart);
-    updateCartCount(updatedCart.length);
+    let oldCart = cart;
+    let cartForRemoval = cart.filter((item) => item.id === productId)[0];
+    let index = cart.indexOf(cartForRemoval);
+    if (index > -1) {
+      oldCart.splice(index, 1);
+    }
+    setCart(oldCart);
+    updateCartCount(cart.length);
   };
 
   const updateCartCount = (count) => {
@@ -116,7 +120,6 @@ function App() {
           element={<Cart cart={cart} removeFromCart={removeFromCart} />}
         />
       </Routes>
-      <Footer />
     </div>
   );
 }
