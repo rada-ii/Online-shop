@@ -23,7 +23,7 @@ const Cart = ({ cart, removeFromCart }) => (
         </div>
       ))}
       {cart.length === 0 ? (
-        <p className="text-center text-gray-700 font-semibold text-lg mt-8 ">
+        <p className="text-center text-gray-700 font-semibold text-lg mt-8 mx-auto ">
           Your cart is empty
         </p>
       ) : null}

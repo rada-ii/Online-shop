@@ -85,7 +85,7 @@ const AllProducts = ({ addToCart, products }) => {
 
   return (
     <div>
-      <div className="flex justify-between mt-28 mb-12 mx-4">
+      <div className="flex justify-between mt-28 mb-12 mx-4 sm:flex-row flex-col items-center">
         <Search handleSearch={handleSearch} />
         <Sort handleSortOrderChange={handleSortOrderChange} />
         <Filter
