@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ShoppingCart } from "phosphor-react";
 
 const Navbar = ({ cartCount }) => (
-  <div className="flex items-center justify-between px-6 py-4 bg-indigo-300 text-white">
+  <div className="flex items-center justify-between px-6 py-4 bg-indigo-300 text-white ">
     <Link to="/">
       <button className="bg-indigo-500 text-white p-2 rounded-md hover:bg-indigo-950">
         All products

@@ -22,7 +22,11 @@ const Cart = ({ cart, removeFromCart }) => (
           </button>
         </div>
       ))}
-      {cart.length === 0 ? <p>Your cart is empty</p> : null}
+      {cart.length === 0 ? (
+        <p className="text-center text-gray-700 font-semibold text-lg mt-8 ">
+          Your cart is empty
+        </p>
+      ) : null}
     </div>
   </>
 );

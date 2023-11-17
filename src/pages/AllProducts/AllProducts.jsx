@@ -13,6 +13,7 @@ const AllProducts = ({ addToCart, products }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [sortOrder, setSortOrder] = useState("default");
   const [sortedProducts, setSortedProducts] = useState([]);
+  const [loading, setLoading] = useState(true); // Introduce loading state
   const itemsPerPage = 9;
 
   useEffect(() => {
@@ -26,16 +27,18 @@ const AllProducts = ({ addToCart, products }) => {
         });
 
         const items = response.data.products.data.items;
-
+        // Set the initial products and sort them based on the default order
         const sortedItems = sortProducts(items, sortOrder);
         setSortedProducts(sortedItems);
+        setLoading(false); // Set loading to false once data is fetched
       } catch (error) {
         console.error("Fetching error:", error);
+        setLoading(false); // Set loading to false in case of an error
       }
     };
 
     fetchData();
-  }, [sortOrder]);
+  }, [sortOrder]); // Update when sortOrder changes
 
   const sortProducts = (items, order) => {
     if (order === "asc") {
@@ -43,6 +46,7 @@ const AllProducts = ({ addToCart, products }) => {
     } else if (order === "desc") {
       return items.slice().sort((a, b) => b.price - a.price);
     } else {
+      // Default order
       return items;
     }
   };
@@ -81,7 +85,7 @@ const AllProducts = ({ addToCart, products }) => {
 
   return (
     <div>
-      <div className="flex justify-between mt-8 mb-12 mx-4">
+      <div className="flex justify-between mt-28 mb-12 mx-4">
         <Search handleSearch={handleSearch} />
         <Sort handleSortOrderChange={handleSortOrderChange} />
         <Filter
@@ -90,8 +94,12 @@ const AllProducts = ({ addToCart, products }) => {
         />
       </div>
 
-      {filteredProducts.length === 0 ? (
-        <p>There are no results for this search. Please try again.</p>
+      {loading ? (
+        <p className="text-center font-semibold text-gray-700">Loading...</p>
+      ) : filteredProducts.length === 0 ? (
+        <p className="text-center font-semibold text-gray-700">
+          There are no results for this search. Please try again.
+        </p>
       ) : (
         <div>
           <ProductsList products={currentProducts} addToCart={addToCart} />

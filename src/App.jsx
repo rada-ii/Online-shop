@@ -7,6 +7,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailsPage";
 import Cart from "./components/Cart/Cart";
 import axios from "axios";
 import { extractUniqueCategories } from "./utils";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -115,6 +116,7 @@ function App() {
           element={<Cart cart={cart} removeFromCart={removeFromCart} />}
         />
       </Routes>
+      <Footer />
     </div>
   );
 }

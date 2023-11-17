@@ -32,9 +32,18 @@ const ProductDetailsPage = () => {
   }, []);
 
   return (
-    <div>
-      <button onClick={() => navigate(-1)}>Go Back</button>
-      {loading && <p>Loading product details...</p>}
+    <div className="flex flex-col items-center">
+      <button
+        onClick={() => navigate(-1)}
+        className="bg-indigo-500 text-white p-2 rounded-md hover:bg-indigo-950 my-8 text-center"
+      >
+        Go Back
+      </button>
+      {loading && (
+        <p className="text-semibold text-gray-700 text-center">
+          Loading product details...
+        </p>
+      )}
       {error && <p>Error: {error}</p>}
       {product && <ProductDetails product={product} />}
     </div>
