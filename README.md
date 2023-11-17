@@ -1,8 +1,31 @@
-# React + Vite
+# Online Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+by Rada Ivankovic
 
-Currently, two official plugins are available:
+Technologies: React, Tailwind, and all other libraries
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Requirements:
+
+- [x] Page with all products listed
+- [x] Product details page
+- [x] Add/remove products from the shopping cart
+
+##### Bonus functionalities (optional):
+- [x] Filter products by category
+- [x] Search products by name or description
+- [x] Sort products by price (ascending/descending)
+
+##### Additional:
+- Pagination
+- Footer
+- Favicon..
+
+
+##### Instructions to get started:
+- Install NPM
+- Clone the repo
+- In the project root folder, run CLI commands:
+
+```bash
+npm install
+npm run dev
