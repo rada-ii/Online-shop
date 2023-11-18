@@ -27,18 +27,18 @@ const AllProducts = ({ addToCart, products }) => {
         });
 
         const items = response.data.products.data.items;
-        // Set the initial products and sort them based on the default order
+        
         const sortedItems = sortProducts(items, sortOrder);
         setSortedProducts(sortedItems);
-        setLoading(false); // Set loading to false once data is fetched
+        setLoading(false); 
       } catch (error) {
         console.error("Fetching error:", error);
-        setLoading(false); // Set loading to false in case of an error
+        setLoading(false); 
       }
     };
 
     fetchData();
-  }, [sortOrder]); // Update when sortOrder changes
+  }, [sortOrder]);
 
   const sortProducts = (items, order) => {
     if (order === "asc") {
@@ -46,7 +46,7 @@ const AllProducts = ({ addToCart, products }) => {
     } else if (order === "desc") {
       return items.slice().sort((a, b) => b.price - a.price);
     } else {
-      // Default order
+      
       return items;
     }
   };

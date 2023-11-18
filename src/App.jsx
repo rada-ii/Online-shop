@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import AllProducts from "./pages/AllProducts/AllProducts";
@@ -7,13 +7,14 @@ import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailsPage";
 import Cart from "./components/Cart/Cart";
 import axios from "axios";
 import { extractUniqueCategories } from "./utils";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [cart, setCart] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [sortOrder, setSortOrder] = useState("default"); // or use an empty string
+  const [sortOrder, setSortOrder] = useState("default");
   const [sortedProducts, setSortedProducts] = useState([]);
   const [products, setProducts] = useState([]);
 
@@ -28,7 +29,7 @@ function App() {
         });
 
         const items = response.data.products.data.items;
-        console.log("Product Items:", items);
+
         setProducts(items);
       } catch (error) {
         console.error("Fetching error:", error);
@@ -39,7 +40,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log("Products before sorting:", products);
     sortProducts();
   }, [sortOrder, products]);
 
@@ -88,8 +88,6 @@ function App() {
       });
     }
 
-    console.log("Sorted Products:", sorted);
-
     setSortedProducts(sorted);
   };
 
@@ -120,6 +118,7 @@ function App() {
           element={<Cart cart={cart} removeFromCart={removeFromCart} />}
         />
       </Routes>
+      <Footer />
     </div>
   );
 }
