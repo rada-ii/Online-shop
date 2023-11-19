@@ -8,6 +8,7 @@ import Cart from "./components/Cart/Cart";
 import axios from "axios";
 import { extractUniqueCategories } from "./utils";
 import Footer from "./components/Footer/Footer";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -117,6 +118,7 @@ function App() {
           path="/cart"
           element={<Cart cart={cart} removeFromCart={removeFromCart} />}
         />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
     </div>

@@ -27,13 +27,13 @@ const AllProducts = ({ addToCart, products }) => {
         });
 
         const items = response.data.products.data.items;
-        
+
         const sortedItems = sortProducts(items, sortOrder);
         setSortedProducts(sortedItems);
-        setLoading(false); 
+        setLoading(false);
       } catch (error) {
         console.error("Fetching error:", error);
-        setLoading(false); 
+        setLoading(false);
       }
     };
 
@@ -46,7 +46,6 @@ const AllProducts = ({ addToCart, products }) => {
     } else if (order === "desc") {
       return items.slice().sort((a, b) => b.price - a.price);
     } else {
-      
       return items;
     }
   };
@@ -85,7 +84,7 @@ const AllProducts = ({ addToCart, products }) => {
 
   return (
     <div>
-      <div className="flex justify-between mt-28 mb-12 mx-4 sm:flex-row flex-col items-center">
+      <div className="flex justify-between mt-28 mb-12 mx-4 lg:flex-row flex-col items-center lg:gap-0 gap-4">
         <Search handleSearch={handleSearch} />
         <Sort handleSortOrderChange={handleSortOrderChange} />
         <Filter

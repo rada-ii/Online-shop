@@ -27,7 +27,6 @@ const ProductCard = ({ product, addToCart }) => (
         className="mt-4 bg-indigo-500 text-white p-2 rounded-md hover:bg-indigo-950"
         onClick={() => {
           addToCart(product);
-          console.log("Item added to cart:", product);
         }}
       >
         Add to Cart

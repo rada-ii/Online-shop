@@ -57,7 +57,7 @@ const Pagination = ({ currentPage, totalPages, paginate }) => {
             className="focus:outline-none"
             onClick={() => paginate(currentPage - 1)}
           >
-            Prev
+            &lt;&lt;
           </button>
         </li>
       )}
@@ -70,7 +70,7 @@ const Pagination = ({ currentPage, totalPages, paginate }) => {
             className="focus:outline-none"
             onClick={() => paginate(currentPage + 1)}
           >
-            Next
+            &gt;&gt;
           </button>
         </li>
       )}
