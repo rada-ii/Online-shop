@@ -14,7 +14,7 @@ const AllProducts = ({ addToCart, products }) => {
   const [sortOrder, setSortOrder] = useState("default");
   const [sortedProducts, setSortedProducts] = useState([]);
   const [loading, setLoading] = useState(true); // Introduce loading state
-  const itemsPerPage = 9;
+  const itemsPerPage = 12;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,6 +56,14 @@ const AllProducts = ({ addToCart, products }) => {
       (selectedCategory === "" || product.category === selectedCategory)
   );
 
+  const handleScrollUp = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleScrollDown = () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  };
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentProducts = filteredProducts.slice(
@@ -84,7 +92,7 @@ const AllProducts = ({ addToCart, products }) => {
 
   return (
     <div>
-      <div className="flex justify-between mt-28 mb-12 mx-4 lg:flex-row flex-col items-center lg:gap-0 gap-4">
+      <div className="flex justify-between lg:mt-28 mt-12 mb-12 mx-12 lg:flex-row flex-col items-center lg:gap-0 gap-6">
         <Search handleSearch={handleSearch} />
         <Sort handleSortOrderChange={handleSortOrderChange} />
         <Filter
@@ -111,6 +119,19 @@ const AllProducts = ({ addToCart, products }) => {
           </div>
         </div>
       )}
+
+      <button
+        onClick={handleScrollUp}
+        className="bg-indigo-500 text-white p-1  hover:bg-indigo-950 fixed bottom-12 right-1 rounded-md"
+      >
+        &uarr;
+      </button>
+      <button
+        onClick={handleScrollDown}
+        className="bg-indigo-500 text-white p-1  hover:bg-indigo-950 fixed top-20 right-1 rounded-md"
+      >
+        &darr;
+      </button>
     </div>
   );
 };

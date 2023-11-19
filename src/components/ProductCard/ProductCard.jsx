@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product, addToCart }) => (
-  <div className="bg-white p-4 rounded-md shadow-md flex flex-col justify-between">
+  <div className="bg-white p-8 rounded-md shadow-md flex flex-col justify-between">
     {product.images && product.images.length > 0 ? (
       <img
         src={product.images[0]}
@@ -15,16 +15,16 @@ const ProductCard = ({ product, addToCart }) => (
       </p>
     )}
 
-    <h2 className="font-semibold text-xl text-indigo-400">{product.name}</h2>
+    <h2 className="font-semibold text-lg text-indigo-400">{product.name}</h2>
     <p className="text-gray-600 mt-4">$ {product.price}</p>
     <div className="flex justify-between">
       <Link to={`/product-details/${product.id}`}>
-        <button className="mt-4 bg-indigo-500 text-white p-2 rounded-md hover:bg-indigo-950">
+        <button className="mt-4 bg-indigo-500 text-white p-2 rounded-md hover:bg-indigo-950 transition duration-200">
           View Details
         </button>
       </Link>
       <button
-        className="mt-4 bg-indigo-500 text-white p-2 rounded-md hover:bg-indigo-950"
+        className="mt-4 bg-indigo-500 text-white p-2 rounded-md hover:bg-indigo-950 transition duration-200"
         onClick={() => {
           addToCart(product);
         }}

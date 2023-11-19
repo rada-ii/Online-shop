@@ -52,7 +52,7 @@ const Pagination = ({ currentPage, totalPages, paginate }) => {
   return (
     <ul className="flex justify-center xl:mt-32 lg:mt-16 sm:mt-4 mb-20">
       {currentPage > 1 && (
-        <li className="px-3 py-1 mx-1 border rounded bg-white text-blue-500 hover:bg-blue-200 cursor-pointer">
+        <li className="px-3 py-1 mx-1 border rounded bg-white text-blue-500 hover:bg-blue-200 cursor-pointer transition duration-200">
           <button
             className="focus:outline-none"
             onClick={() => paginate(currentPage - 1)}

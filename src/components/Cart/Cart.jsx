@@ -2,7 +2,7 @@ import React from "react";
 
 const Cart = ({ cart, removeFromCart }) => (
   <>
-    <h2 className="text-center mt-6 text-lg text-indigo-950 font-semibold">
+    <h2 className="text-center mt-6 text-lg text-indigo-950 font-semibold transition-all">
       Your Cart
     </h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mx-4 mt-8">

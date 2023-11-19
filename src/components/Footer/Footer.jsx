@@ -6,8 +6,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-indigo-300 fixed bottom-0 py-3 w-full mt-16">
-      <div className="container mx-auto flex justify-start">
-        <p className="text-white sm:-ml-4 ml-4 text-sm">
+      <div className="container flex mx-12">
+        <p className="text-white  text-sm">
           &copy; {currentMonth} {currentYear} By Rada Ivankovic
         </p>
       </div>
