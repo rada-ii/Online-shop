@@ -1,5 +1,3 @@
-import React from "react";
-
 const Sort = ({ handleSortOrderChange }) => (
   <div className="text-gray-600">
     <label htmlFor="sortOrder">Sort by Price: </label>

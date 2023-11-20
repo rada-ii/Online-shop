@@ -1,5 +1,3 @@
-import React from "react";
-
 const Cart = ({ cart, removeFromCart }) => (
   <>
     <h2 className="text-center mt-6 text-lg text-indigo-950 font-semibold transition-all">

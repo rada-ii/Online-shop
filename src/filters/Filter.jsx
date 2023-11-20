@@ -1,5 +1,3 @@
-import React from "react";
-
 const Filter = ({ handleCategoryChange, categories }) => (
   <div className="text-gray-600">
     <label htmlFor="category">Filter by Category: </label>

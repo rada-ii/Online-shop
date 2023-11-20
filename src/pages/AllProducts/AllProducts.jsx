@@ -13,7 +13,7 @@ const AllProducts = ({ addToCart, products }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [sortOrder, setSortOrder] = useState("default");
   const [sortedProducts, setSortedProducts] = useState([]);
-  const [loading, setLoading] = useState(true); // Introduce loading state
+  const [loading, setLoading] = useState(true);
   const itemsPerPage = 12;
 
   useEffect(() => {

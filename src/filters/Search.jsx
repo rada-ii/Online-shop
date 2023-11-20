@@ -1,5 +1,4 @@
 import { FileSearch } from "phosphor-react";
-import React from "react";
 
 const Search = ({ handleSearch }) => (
   <div className="flex justify-stretch text-gray-600">
