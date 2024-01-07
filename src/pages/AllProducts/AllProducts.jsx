@@ -41,6 +41,8 @@ const AllProducts = ({ addToCart, products }) => {
   }, [sortOrder]);
 
   const sortProducts = (items, order) => {
+    console.log("--------------bilo koja rec-------------");
+
     if (order === "asc") {
       return items.slice().sort((a, b) => a.price - b.price);
     } else if (order === "desc") {
