@@ -5,7 +5,7 @@ const Cart = ({ cart, removeFromCart }) => (
     </h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mx-4 mt-8">
       {cart.map((item) => (
-        <div key={item.id} className="flex flex-col items-center text-gray-600">
+        <div key={item.id} className="flex flex-col items-center text-gray-500">
           <p className="my-8">{item.name}</p>
           <img
             src={item.images[0]}
