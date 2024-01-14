@@ -10,7 +10,7 @@ const Cart = ({ cart, removeFromCart }) => (
           <img
             src={item.images[0]}
             alt={`${item.name}-0`}
-            className="w-1/2 h-40 object-cover mb-4 rounded-md"
+            className="w-1/2 h-40 object-cover mb-5 rounded-md"
           />
           <button
             className="my-4 bg-indigo-500 text-white p-2 rounded-md hover:bg-indigo-950"
